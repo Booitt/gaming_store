@@ -3,9 +3,11 @@ import HomePage from "./Pages/HomePage";
 
 const theme = {
 	colors: {
-    background: "#211522",
-    text: "white",
-    red: "#DB1F48",    
+    background: "black",
+    navbar: "white",
+    navbarMainText: "#DB1F48",
+    navbarSecondaryText: "#A8999C",
+    text: "white"   
   }
 };
 
@@ -16,6 +18,10 @@ const GlobalStyle = createGlobalStyle`
         padding: 0;
         margin: 0;
         box-sizing: border-box;
+    }
+
+    a {
+      text-decoration: none;
     }
 
     body {

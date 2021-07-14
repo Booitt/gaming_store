@@ -1,17 +1,15 @@
-import Section from "../components/Section";
-import backgroundImage from "../assets/images/bg1.jpg"
+import Header from "../components/Header";
+// import Section from "../components/Section";
 
 const HomePage = () => {
 	return (
-		<main>
-			<header></header>
-			<main>
-				<Section backgroundImage={backgroundImage}>
-					<h1>Hello World</h1>
-				</Section>
+		<>
+			<Header />
+			{/* <main>
+				<Section></Section>
 			</main>
-			<footer></footer>
-		</main>
+			<footer></footer> */}
+		</>
 	);
 };
 
