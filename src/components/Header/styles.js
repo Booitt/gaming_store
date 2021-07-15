@@ -1,10 +1,14 @@
 import styled from "styled-components";
 
 const Header = styled.header`
+	max-width: ${({theme}) => theme.sections.maxWidth};
+	margin: auto;
 `;
 
 Header.Navbar = styled.div`
 	position: fixed;
+	left: 0;
+	top: 0;
 	width: 100%;
 	display: flex;
 	align-items: center;
@@ -14,18 +18,19 @@ Header.Navbar = styled.div`
 
 	div {
 		&:first-child {
-			flex: .1;
+			flex: 2;
 			display: flex;
 			align-items: center;
 
 			img {
-				margin: auto;
+				margin: auto 0;
 				height: auto;
 				width: 60px;
 			}
 		}
 
 		&:last-child {
+			flex: 2;
 			text-align: center;
 
 			a {
@@ -75,7 +80,7 @@ Header.Navbar = styled.div`
 `
 
 Header.Content = styled.div`
-	height: 100vh;
+	min-height: 100vh;
 	width: 100%;
 	display: flex;
 	align-items: center;
@@ -105,7 +110,7 @@ Header.Content = styled.div`
 		flex: 1;
 		margin: 0 10rem 0 5rem;
 		border-radius: 1rem;
-		box-shadow: 3px 3px 10px #5015B888	;
+		border: .1em solid white;
 		width: 40%;
 		min-width: 600px;
 		height: auto;

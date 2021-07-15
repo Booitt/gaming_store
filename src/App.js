@@ -1,18 +1,26 @@
 import { ThemeProvider, createGlobalStyle } from "styled-components";
-import HomePage from "./Pages/HomePage";
+import HomePage from "./pages/HomePage";
 
 const theme = {
 	colors: {
     background: "black",
+    text: "white",
     navbar: "white",
     navbarMainText: "#DB1F48",
     navbarSecondaryText: "#A8999C",
-    text: "white"   
+    offersBackground: "white",
+    buttonText: "#DB1F48",
+  },
+  sections: {
+    maxWidth: "1500px"
   }
 };
 
 const GlobalStyle = createGlobalStyle`
-    html { font-size: 10px; }
+    html { 
+      font-size: 10px; 
+      scroll-behavior: smooth;
+    }
 
     * {
         padding: 0;

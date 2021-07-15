@@ -1,6 +1,6 @@
 import StyledHeader from "./styles";
 import logo from "../../assets/images/logo.webp";
-import perifericosImg from "../../assets/images/setup.png";
+import setupImg from "../../assets/images/setup.webp";
 
 const Header = () => {
 	return (
@@ -22,12 +22,12 @@ const Header = () => {
 			</StyledHeader.Navbar>
 			<StyledHeader.Content>
 				<div>
-					<h1>Performe o seu máximo</h1>
+					<h1>Jogue o seu melhor</h1>
 					<p>
 						Monte seu setup gamer e atinja o topo dos ranks!
 					</p>
 				</div>
-				<img src={perifericosImg} alt="Periféricos de computador"></img>
+				<img src={setupImg} alt="Setup gamer"></img>
 			</StyledHeader.Content>
 		</StyledHeader>
 	);
