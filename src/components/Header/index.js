@@ -1,4 +1,4 @@
-import StyledHeader from "./styles";
+import StyledHeader from "./styled";
 import logo from "../../assets/images/logo.webp";
 import setupImg from "../../assets/images/setup.webp";
 

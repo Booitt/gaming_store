@@ -1,4 +1,4 @@
-import StyledFooter from "./styles";
+import StyledFooter from "./styled";
 
 const Footer = () => {
 	return (
@@ -16,7 +16,9 @@ const Footer = () => {
 				</a>
 			</p>
 			<hr />
-			<p>Desafio Hiring Coders</p>
+			<p>
+				Desafio <a href="https://hiringcoders.com.br" target="_blank" rel="noreferrer">Hiring Coders</a>
+			</p>
 		</StyledFooter>
 	);
 };

@@ -1,4 +1,4 @@
-import StyledMain from "./styles";
+import StyledMain from "./styled";
 import { offers } from "../../constants";
 
 const Main = () => {

@@ -1,25 +1,30 @@
+import { useState } from "react";
 import { ThemeProvider, createGlobalStyle } from "styled-components";
 import HomePage from "./pages/HomePage";
 
 const theme = {
 	colors: {
-    background: "black",
-    text: "white",
-    navbar: "white",
-    navbarMainText: "#DB1F48",
-    navbarSecondaryText: "#A8999C",
-    offersBackground: "white",
-    buttonText: "#DB1F48",
-  },
-  sections: {
-    maxWidth: "1500px"
-  }
+		background: "black",
+		text: "white",
+		navbar: "white",
+		navbarMainText: "#DB1F48",
+		red: "#DB1F48",
+		navbarSecondaryText: "#A8999C",
+		offersBackground: "white",
+		buttonText: "#DB1F48",
+		grey: "#A8999C",
+	},
+	sections: {
+		maxWidth: "1500px",
+	},
 };
 
 const GlobalStyle = createGlobalStyle`
     html { 
       font-size: 10px; 
       scroll-behavior: smooth;
+      overflow: ${({ isOverflowHidden }) =>
+			isOverflowHidden ? "hidden" : "initial"};
     }
 
     * {
@@ -39,11 +44,13 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 function App() {
+	const [isOverflowHidden, setOverflowHidden] = useState();
+
 	return (
 		<>
-			<GlobalStyle />
+			<GlobalStyle isOverflowHidden={isOverflowHidden} />
 			<ThemeProvider theme={theme}>
-        <HomePage />
+				<HomePage setOverflowHidden={setOverflowHidden}/>
 			</ThemeProvider>
 		</>
 	);

@@ -5,6 +5,7 @@ const Footer = styled.footer`
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
+	align-items: center;
 
 	p {
 		text-align: center;

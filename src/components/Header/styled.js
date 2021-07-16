@@ -110,7 +110,8 @@ Header.Content = styled.div`
 		flex: 1;
 		margin: 0 10rem 0 5rem;
 		border-radius: 1rem;
-		border: .1em solid white;
+		/* border: .1em solid white; */
+		box-shadow: inset 0 0 50px white;
 		width: 40%;
 		min-width: 600px;
 		height: auto;
