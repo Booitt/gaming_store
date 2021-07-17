@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { validateEmail } from "../../helper";
+import { validateEmail } from "../../../helper";
 import StyledModal from "./styled";
 import Input from "../Input";
 import Button from "../Button";

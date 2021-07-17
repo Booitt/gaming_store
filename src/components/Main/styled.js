@@ -11,6 +11,7 @@ const Main = styled.main`
 	justify-content: center;
 
 	h2 {
+		text-align: center;
 		text-transform: uppercase;
 		font-size: 3rem;
 	}
@@ -24,6 +25,12 @@ Main.Offers = styled.div`
 	background-color: ${({ theme }) => theme.colors.mainBackground};
 	display: flex;
 	justify-content: space-around;
+
+	@media (max-width: 950px) {
+		flex-direction: column;
+		height: fit-content;
+		align-items: center;
+	}
 
 	div {
 		display: flex;
@@ -71,6 +78,10 @@ Main.Button = styled.a`
 	display: inline-block;
 	text-align: center;
 	margin-bottom: 5rem;
+
+	@media (max-width: 950px) {
+			margin: 5rem 0 2rem 0;
+	}
 
 	&:after {
 		border-bottom: 1px solid ${({ theme }) => theme.colors.buttonText};

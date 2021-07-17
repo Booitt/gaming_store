@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const Header = styled.header`
-	max-width: ${({theme}) => theme.sections.maxWidth};
+	max-width: ${({ theme }) => theme.sections.maxWidth};
 	margin: auto;
 `;
 
@@ -22,6 +22,10 @@ Header.Navbar = styled.div`
 			display: flex;
 			align-items: center;
 
+			@media (max-width: 800px) {
+				flex: none;
+			}
+
 			img {
 				margin: auto 0;
 				height: auto;
@@ -29,9 +33,18 @@ Header.Navbar = styled.div`
 			}
 		}
 
-		&:last-child {
+		&:not(:first-child) {
 			flex: 2;
-			text-align: center;
+			display: flex;
+
+			@media (max-width: 1121px) {
+				flex-direction: column;
+				align-items: center;
+			}
+
+			@media (max-width: 800px) {
+				display: none;
+			}
 
 			a {
 				margin: auto 1.5rem;
@@ -42,6 +55,10 @@ Header.Navbar = styled.div`
 					border-bottom: 1px solid
 						${({ theme }) => theme.colors.navbarSecondaryText};
 				}
+
+				@media (max-width: 1121px) {
+					margin: 0.3rem 0;
+				}
 			}
 		}
 	}
@@ -50,10 +67,22 @@ Header.Navbar = styled.div`
 		flex: 8;
 		text-align: center;
 
+		@media (max-width: 800px) {
+			display: ${({ showLinks }) => (showLinks ? "flex" : "none")};
+			flex-direction: column;
+			margin-top: 6rem;
+		}
+
 		a {
 			margin: auto 1.5rem;
 			font-size: 1.8rem;
 			color: ${({ theme }) => theme.colors.navbarMainText};
+
+			@media (max-width: 800px) {
+				margin: 1rem auto;
+				width: fit-content;
+				text-align: center;
+			}
 
 			&:after {
 				border-bottom: 1px solid
@@ -77,13 +106,27 @@ Header.Navbar = styled.div`
 	a:hover:after {
 		transform: scaleX(1);
 	}
-`
+
+	@media (max-width: 800px) {
+		align-items: flex-start;
+		justify-content: space-between;
+		padding: 0.5rem;
+	}
+`;
 
 Header.Content = styled.div`
 	min-height: 100vh;
 	width: 100%;
 	display: flex;
 	align-items: center;
+
+	@media (max-width: 950px) {
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		/* padding-bottom: ${({showLinks}) => showLinks ? "-5vh" : "20vh"}; */
+		padding: 5vh 0;
+	}
 
 	div {
 		flex: 2;
@@ -93,9 +136,17 @@ Header.Content = styled.div`
 		margin-left: 10rem;
 		text-align: end;
 
+		@media (max-width: 950px) {
+			flex: 1;
+			text-align: center;
+			justify-content: flex-end;
+			align-items: center;
+			margin: 2rem 1rem;
+		}
+
 		h1 {
 			font-size: 4.5rem;
-			font-family: 'Fugaz One', cursive;
+			font-family: "Fugaz One", cursive;
 			text-transform: uppercase;
 			font-weight: bold;
 		}
@@ -110,12 +161,32 @@ Header.Content = styled.div`
 		flex: 1;
 		margin: 0 10rem 0 5rem;
 		border-radius: 1rem;
-		/* border: .1em solid white; */
-		box-shadow: inset 0 0 50px white;
 		width: 40%;
 		min-width: 600px;
 		height: auto;
+
+		@media (max-width: 1050px) {
+			min-width: 95vw;
+			margin: auto;
+			height: auto;
+			align-self: center;
+			justify-self: center;
+		}
 	}
-`
+`;
+
+Header.Hamburger = styled.span`
+	margin: 1rem 0.5rem;
+	cursor: pointer;
+	user-select: none;
+
+	svg {
+		fill: ${({ theme }) => theme.colors.red};
+	}
+
+	@media (min-width: 800px) {
+		display: none;
+	}
+`;
 
 export default Header;
