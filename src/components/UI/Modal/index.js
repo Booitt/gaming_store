@@ -83,7 +83,7 @@ const Modal = ({ onClose, setOverflowHidden }) => {
 					) : (
 						<>
 							<h2>
-								Obrigado, <strong>{name}</strong>!
+								Obrigado, <strong>{name.split(" ")[0]}</strong>!
 							</h2>
 							<p>
 								Em breve você receberá e-mails com as nossas ofertas.

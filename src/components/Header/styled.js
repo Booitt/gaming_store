@@ -125,7 +125,7 @@ Header.Content = styled.div`
 		align-items: center;
 		justify-content: center;
 		/* padding-bottom: ${({showLinks}) => showLinks ? "-5vh" : "20vh"}; */
-		padding: 5vh 0;
+		padding: 0 0 20vh 0;
 	}
 
 	div {
@@ -165,12 +165,13 @@ Header.Content = styled.div`
 		min-width: 600px;
 		height: auto;
 
-		@media (max-width: 1050px) {
-			min-width: 95vw;
+		@media (max-width: 950px) {
+			aspect-ratio: 5;
 			margin: auto;
-			height: auto;
-			align-self: center;
-			justify-self: center;
+		}
+
+		@media (max-width: 650px) {
+			min-width: 95%;
 		}
 	}
 `;
@@ -179,6 +180,11 @@ Header.Hamburger = styled.span`
 	margin: 1rem 0.5rem;
 	cursor: pointer;
 	user-select: none;
+	
+	&:focus {
+		user-select: none;
+		background-color: transparent;
+	}
 
 	svg {
 		fill: ${({ theme }) => theme.colors.red};
