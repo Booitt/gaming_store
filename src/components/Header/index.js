@@ -1,7 +1,7 @@
 import StyledHeader from "./styled";
 import logo from "../../assets/images/logo.webp";
 import setupImg from "../../assets/images/setup.webp";
-import { useState } from "react/cjs/react.development";
+import { useState } from "react";
 
 const Header = () => {
 	const [showLinks, setShowLinks] = useState(false);
